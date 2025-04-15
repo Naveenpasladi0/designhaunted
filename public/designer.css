@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Share+Tech+Mono&display=swap');
+
+/* Body Styles */
+body {
+  margin: 0;
+  padding: 40px 20px;
+  font-family: 'Share Tech Mono', monospace;
+  background: #0d0d0d;
+  color: #f8f8f8;
+  overflow-x: hidden;
+  animation: flickerBg 10s infinite alternate;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: 'Creepster', cursive;
+  font-size: 3rem;
+  color: #ff3333;
+  text-shadow: 2px 2px #000;
+  animation: flicker 2s infinite;
+  margin-bottom: 30px;
+}
+
+/* Container Style */
+.container {
+    
+    width: 100%;
+    padding: 60px 40px; /* More vertical space */
+    margin: 0 auto;
+    background: rgba(20, 20, 20, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 0 30px #ff000022;
+    box-sizing: border-box;
+  } 
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+form input,
+form textarea {
+  margin-top: 30px;
+  background: #111;
+  color: #f8f8f8;
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px dashed #aa0000;
+  width: 100%;
+  box-shadow: inset 0 0 15px #ff000033;
+  font-family: 'Share Tech Mono', monospace;
+  animation: float 6s ease-in-out infinite;
+  font-size: 1rem;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #ff3333;
+  background: #1f1f1f;
+  box-shadow: 0 0 10px #ff333366;
+  outline: none;
+}
+
+form button {
+  margin: -19px 0 16px;
+  background: #aa0000;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  padding: 14px 24px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px #ff000066;
+}
+
+form button:hover {
+  background: #ff0000;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff000099;
+}
+
+/* Upload Section */
+.image-upload-section {
+    margin-top: 30px;
+    background: #111;
+    color: #f8f8f8;
+    padding: 20px;
+    width: 100%;
+    font-family: 'Share Tech Mono', monospace;
+    animation: float 6s ease-in-out infinite;
+    box-sizing: border-box;
+}
+
+.image-upload-section h2 {
+  font-family: 'Creepster', cursive;
+  color: #ff3333;
+  margin-bottom: 20px;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #aa0000;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 10px #ff000044;
+  margin-bottom: 20px;
+  background-color: #222;
+  padding: 0.8rem;
+  color: white;
+  cursor: pointer;
+  border: 2px solid crimson;
+  border-radius: 5px;
+  width: 20%;
+}
+
+.custom-file-upload:hover {
+  background-color: #ff0000;
+}
+
+.custom-file-upload input[type="file"] {
+  display: none;
+}
+
+/* Preview Area */
+#preview {
+  margin-top: 40px;
+  background: #111;
+  color: #f8f8f8;
+  padding: 30px;
+  border-radius: 12px;
+  border: 2px dashed #ff3333;
+  min-height: 350px;
+  box-shadow: inset 0 0 15px #ff000033;
+  font-family: 'Share Tech Mono', monospace;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #1a1a1a;
+}
+
+.preview-info {
+  color: #ffdddd;
+  font-size: 1.2rem;
+  text-shadow: 2px 2px #000;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Image Previews */
+#imagePreviewContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+#imagePreviewContainer img {
+  width: 120px;
+  border-radius: 8px;
+  border: 1px solid #aa0000;
+  box-shadow: 0 0 10px #ff000044;
+}
+
+/* Animations */
+@keyframes pulseShadow {
+  0% { box-shadow: 0 0 10px #ff000022; }
+  50% { box-shadow: 0 0 30px #ff0000aa; }
+  100% { box-shadow: 0 0 10px #ff000022; }
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+  20%, 24%, 55% { opacity: 0.5; }
+}
+
+@keyframes flickerBg {
+  0% { background-color: #0d0d0d; }
+  100% { background-color: #1a0000; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  /*50% { transform: translateY(-10px); } */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 { font-size: 2.5rem; }
+  .container { padding: 30px 20px; }
+  form input,
+  form textarea { font-size: 0.95rem; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 2rem; }
+  form input,
+  form textarea { font-size: 0.9rem; }
+}
+
+/* Logout */
+.logout-container {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.logout-button {
+  background-color: #300000;
+  color: #ff4444;
+  border: 2px solid #ff4444;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-family: 'Creepster', cursive;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px #ff4444;
+}
+
+.logout-button:hover {
+  background-color: #4d0000;
+  color: #fff;
+  box-shadow: 0 0 12px #ff4444;
+  transform: scale(1.05);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Cinzel+Decorative&family=Roboto+Mono&display=swap');
+
+body {
+  background-color: #0d0d0d;
+  color: #f5f5f5;
+  font-family: 'Roboto Mono', monospace;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 2rem;
+  margin: auto;
+  background-color: rgba(20, 20, 20, 0.8);
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Creepster', cursive;
+  color: #ff3333;
+  font-size: 3rem;
+}
+
+form input[type="text"],
+form textarea {
+  width: 95%;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  background-color: #1e1e1e;
+  border: 2px solid #ff3333;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  width: 10%;
+  padding: 1rem;
+  background-color: #ff3333;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: 'Creepster', cursive;
+  box-shadow: 0 0 10px red;
+}
+
+button[type="submit"]:hover {
+  background-color: #cc0000;
+  width: 10%;
+}
+
+.image-upload-section {
+  margin: 1.5rem 0;
+}
+
+#imagePreviewContainer img {
+  max-width: 100px;
+  margin: 0.5rem;
+  border: 2px solid #ff3333;
+  border-radius: 5px;
+}
+
+/* Logout */
+.logout-container {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+}
+
+.logout-button {
+  padding: 10px 20px;
+  background-color: #550000;
+  color: #fff;
+  border: 2px solid #ff3333;
+  font-family: 'Creepster', cursive;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 0 10px red;
+}
+
+.logout-button:hover {
+  background-color: #770000;
+}
+
+/* Advanced Tools */
+.advanced-tools {
+  margin: 2rem auto;
+  padding: 1.5rem;
+  max-width: 800px;
+}
+
+.advanced-tools h2 {
+  font-family: 'Creepster', cursive;
+  color: #ff3333;
+}
+
+.tool-group {
+  margin-bottom: 1.2rem;
+}
+
+.tool-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #eee;
+}
+
+.tool-group select,
+.tool-group input[type="color"] {
+  width: 65%;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  background-color: #1e1e1e;
+  border: 2px solid #ff3333;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 5px;
+}

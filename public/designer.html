@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Haunted Website Designer</title>
+  <link rel="stylesheet" href="designer.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Summon Your Website</h1>
+    <form id="designForm">
+      <input type="text" name="title" placeholder="Your Website Title" required />
+      <textarea name="description" placeholder="Describe your haunted visions..." required></textarea>
+
+
+
+      <div class="image-upload-section">
+        <h2>Upload Pre-Images or Haunted Assets</h2>
+        <label class="custom-file-upload">
+          <input type="file" id="imageUploader" multiple accept="image/*" />
+          Choose Files
+        </label>
+
+        <h2>🕸 Advanced Conjuration Tools</h2>
+      
+        <div class="tool-group">
+          <label for="fontSelect">Choose a Cursed Font:</label>
+          <select id="fontSelect">
+            <option value="'Creepster', cursive">Creepster</option>
+            <option value="'Cinzel Decorative', cursive">Ancient Scroll</option>
+            <option value="'Roboto Mono', monospace">Dark Terminal</option>
+          </select>
+        </div>
+      
+        <div class="tool-group">
+          <label for="layoutSelect">Choose a Haunted Layout:</label>
+          <select id="layoutSelect">
+            <option value="classic">Classic Tomb</option>
+            <option value="grid">Ghost Grid</option>
+            <option value="stacked">Stacked Spirits</option>
+          </select>
+        </div>
+      
+        <div class="tool-group">
+          <label for="themeColor">Choose the Curse Color:</label>
+          <input type="color" id="themeColor" value="#990000" />
+        </div>
+      
+        <div class="tool-group">
+          <label for="buttonStyle">Button Style of Doom:</label>
+          <select id="buttonStyle">
+            <option value="bloody">Bloody</option>
+            <option value="glowing">Glowing</option>
+            <option value="ghostly">Ghostly</option>
+          </select>
+        </div>
+
+        <div id="imagePreviewContainer"></div>
+      </div>
+
+    
+      <button type="submit">Conjure</button>
+    </form>
+
+    <div id="preview">
+      <p class="preview-info">Your generated content will appear here...</p>
+    </div>
+  </div>
+
+  <div class="logout-container">
+    <button class="logout-button" onclick="logout()">☠ Logout</button>
+  </div>  
+
+<script>
+    const uploader = document.getElementById('imageUploader');
+    const previewContainer = document.getElementById('imagePreviewContainer');
+    const form = document.getElementById('designForm');
+    const previewBox = document.getElementById('preview');
+  
+    // Image preview (already working)
+    uploader.addEventListener('change', function () {
+      previewContainer.innerHTML = '';
+      Array.from(uploader.files).forEach(file => {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const img = document.createElement('img');
+          img.src = e.target.result;
+          previewContainer.appendChild(img);
+        };
+        reader.readAsDataURL(file);
+      });
+    });
+  
+    // Handle form submission
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); // Prevent actual form submission
+  
+      // Get input values
+      const title = form.title.value.trim();
+      const description = form.description.value.trim();
+  
+      // Create title and description elements
+      const titleElement = document.createElement('h2');
+      titleElement.textContent = title;
+      titleElement.style.color = '#ff3333';
+      titleElement.style.fontFamily = "'Creepster', cursive";
+      titleElement.style.textShadow = '2px 2px #000';
+  
+      const descElement = document.createElement('p');
+      descElement.textContent = description;
+      descElement.style.color = '#ffdddd';
+      descElement.style.fontSize = '1.1rem';
+      descElement.style.lineHeight = '1.6';
+  
+      // Clear previous preview content
+      previewBox.innerHTML = '';
+      
+      // Append new content
+      previewBox.appendChild(titleElement);
+      previewBox.appendChild(descElement);
+  
+      // Append image previews
+      previewBox.appendChild(previewContainer.cloneNode(true));
+    });
+</script>
+
+<script>
+    // Logout Script
+  function logout() {
+    // Optional: Clear local storage/session storage if used
+    localStorage.clear();
+    sessionStorage.clear();
+
+    // Optional: Show a spooky alert
+    alert("You've been logged out of the haunted realm...");
+
+    // Redirect to login or home page
+    window.location.href = "index.html"; // Change to your actual login page
+  }
+</script>
+  
+</body>
+</html>

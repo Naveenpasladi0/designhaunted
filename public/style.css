@@ -1,0 +1,167 @@
+/* Importing fonts */
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Share+Tech+Mono&display=swap');
+
+/* Combined Container */
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 40px;
+  background: #1a1a1a;
+  border-radius: 12px;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Story Section */
+.story-section {
+  width: 100%;
+  text-align: center;
+}
+
+.story-section h2 {
+  font-family: 'Creepster', cursive;
+  font-size: 2.5rem;
+  color: #ff3333;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px #000;
+}
+
+.story-section p {
+  font-size: 1.1rem;
+  color: #ffdddd;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.project-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.project-gallery img {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid #aa0000;
+  box-shadow: 0 0 15px #ff000055;
+  transition: transform 0.3s ease;
+}
+
+.project-gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #ff0000aa;
+}
+
+/* Final Call */
+.final-call {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ff4444;
+  text-shadow: 1px 1px #000;
+  margin-top: 20px;
+}
+
+/* Login Section */
+.login-box {
+  background: #1a1a1a;
+  padding: 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  animation: fadeInUp 1s ease-out;
+}
+
+.login-box h1 {
+  font-family: 'Creepster', cursive;
+  font-size: 2rem;
+  color: #ff3333;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px #000;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.login-box input {
+  margin: 10px 0;
+  padding: 12px 16px;
+  width: 100%;
+  border: 1px solid #aa0000;
+  border-radius: 8px;
+  background: #1f1f1f;
+  color: #ffdddd;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.login-box input:focus {
+  border-color: #ff3333;
+  background: #2a2a2a;
+  outline: none;
+}
+
+.login-box button {
+  margin-top: 15px;
+  background-color: #aa0000;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.login-box button:hover {
+  background-color: #ff0000;
+}
+
+.login-box a {
+  color: #ff3333;
+  text-decoration: none;
+  margin-top: 15px;
+  display: inline-block;
+}
+
+/* Common Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Style for the "Already have an account?" section */
+
+.login-box p {
+  font-size: 1rem;
+  color: #ffdddd;
+  margin-top: 20px;
+}
+
+.login-box a {
+  color: #ff3333;
+  text-decoration: underline;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.login-box a:hover {
+  color: #ff0000;
+  text-decoration: none;
+}
